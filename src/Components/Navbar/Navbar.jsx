@@ -38,7 +38,7 @@ function Navbar() {
         >
           <Link
             className="hover:text-[#5EC49D] transition-all duration-150 ease"
-            to={"/home"}
+            to={"/"}
           >
             HOME
           </Link>

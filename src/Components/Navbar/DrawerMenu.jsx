@@ -48,7 +48,7 @@ function DrawerMenu() {
             <Box p={4}>
               <HStack>
                 {/* Add onClick to close drawer when the link is clicked */}
-                <Link to={"/home"} onClick={handleLinkClick}>
+                <Link to={"/"} onClick={handleLinkClick}>
                   HOME
                 </Link>
               </HStack>

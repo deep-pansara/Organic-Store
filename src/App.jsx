@@ -23,7 +23,7 @@ function App() {
         <Navbar />
           <Routes>
             {/* <Route path="/" element={<Layout />} /> */}
-            <Route path="/home" element={<Home />} />
+            <Route path="/" element={<Home />} />
             <Route path="/shop" element={<Shop />} />
             <Route path='/organic-fruits' element={<OrganicFruits />} />
             <Route path='/aggregate-fruits' element={<AggregrateFruits />} />
