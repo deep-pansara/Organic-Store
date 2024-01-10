@@ -1,6 +1,5 @@
 import { Box, Grid, GridItem, Image, Text, VStack, HStack } from '@chakra-ui/react';
 import React from 'react';
-import watermelon from '../../assets/Fruits & Vegetables/Watermelon.png';
 import data from '../../assets/Data';
 
 function Section3Cards() {
