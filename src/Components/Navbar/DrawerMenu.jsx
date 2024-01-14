@@ -51,10 +51,28 @@ function DrawerMenu() {
                 <Link to={"/"} onClick={handleLinkClick}>
                   HOME
                 </Link>
+                
               </HStack>
+              
+              
             </Box>
             <AccordianItem handleLinkClick={handleLinkClick}/>
+
+            <Box p={4}>
+              <HStack>
+                {/* Add onClick to close drawer when the link is clicked */}
+                <Link to={"/contact"} onClick={handleLinkClick}>
+                  CONTACT
+                </Link>
+                
+              </HStack>
+              
+              
+            </Box>
+            
           </DrawerBody>
+
+            
 
           <DrawerFooter>
             <Button variant="outline" mr={3} onClick={onClose}>

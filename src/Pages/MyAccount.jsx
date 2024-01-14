@@ -1,10 +1,10 @@
-import React from 'react'
+import LoginPage from '../Components/MyAccount Section/LoginPage'
 
 function MyAccount() {
   return (
-    <div>
-      MyAccount
-    </div>
+    <>
+      <LoginPage />
+    </>
   )
 }
 

@@ -14,6 +14,10 @@ import MyAccount from './Pages/MyAccount';
 import Contact from './Pages/Contact';
 import Navbar from './Components/Navbar/Navbar';
 import Footer from './Components/Footer/Footer';
+import ForgetPassword from './Pages/ForgetPassword';
+import SignUp from './Pages/SignUp';
+import Favourite from './Pages/Favourite';
+import { Toaster } from 'react-hot-toast';
 
 function App() {
   return (
@@ -34,7 +38,12 @@ function App() {
             <Route path='/faq' element={<Faq />} /> 
             <Route path='/my-account' element={<MyAccount />} />
             <Route path='/contact' element={<Contact />} />
+            <Route path='/forgetPassword' element={<ForgetPassword />} />
+            <Route path='/signUp' element={<SignUp />} />
+            {/* <Route path='/cart' element={<Cart />} /> */}
+            <Route  path='/favourite' element={<Favourite />} />
           </Routes>
+          <Toaster />
           <Footer />
         </BrowserRouter>
       </ChakraProvider>

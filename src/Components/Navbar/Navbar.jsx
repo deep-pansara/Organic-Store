@@ -7,10 +7,38 @@ import "./Navbar.css";
 import logo from "../../assets/Logo.png";
 import SearchBox from "./SearchBox";
 import DrawerMenu from "./DrawerMenu";
+import { useEffect, useState } from "react";
 
 function Navbar() {
+  
+  const [isSticky, setIsSticky] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const windowHeight = window.innerHeight;
+      const scrollThreshold = 0.1; // 10% of the window height
+
+      setIsSticky(scrollPosition >= windowHeight * scrollThreshold);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+  
+  
   return (
-    <Box  width={"100%"} min-height={"10px"} >
+    <Box  
+     position={isSticky ? "fixed" : "static"}
+      top={isSticky ? "0" : "auto"}
+      zIndex={1000}
+      backgroundColor={isSticky ? "white" : "transparent"}
+      boxShadow={isSticky ? "0px 0px 10px rgba(0, 0, 0, 0.1)" : "none"}
+      transition="background-color 0.3s ease, box-shadow 0.3s ease"
+    width={"100%"} min-height={"10px"} >
       <HStack
         wrap={["wrap", "wrap", "wrap", "nowrap"]}
         width={"100%"}
@@ -78,6 +106,7 @@ function Navbar() {
           <SearchBox />
 
           {/* Cart */}
+          <Link >
           <Container
             cursor={"pointer"}
             position={"relative"}
@@ -106,8 +135,10 @@ function Navbar() {
               0
             </Box>
           </Container>
+          </Link>
 
           {/* User */}
+          <Link to={"/my-account"}>
           <Container
             display={["none", "flex", "flex", "flex"]}
             cursor={"pointer"}
@@ -119,6 +150,7 @@ function Navbar() {
           >
             <i className="ri-user-3-line text-2xl text-[#5EC49D] hover:text-[#451D1D] font-medium"></i>
           </Container>
+          </Link>
         </HStack>
       </HStack>
     </Box>
