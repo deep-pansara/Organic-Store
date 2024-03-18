@@ -6,7 +6,6 @@ import {
   Button,
   Drawer,
   DrawerBody,
-  DrawerFooter,
   DrawerHeader,
   DrawerOverlay,
   DrawerContent,
@@ -27,7 +26,12 @@ function DrawerMenu() {
 
   return (
     <>
-      <Button ref={btnRef} backgroundColor={'transparent'} _hover={{backgroundColor:'transparent'}} onClick={onOpen}>
+      <Button
+        ref={btnRef}
+        backgroundColor={"transparent"}
+        _hover={{ backgroundColor: "transparent" }}
+        onClick={onOpen}
+      >
         <HStack>
           <IoMdMenu className="w-6 h-6" />
           <Text>Menu</Text>
@@ -42,7 +46,7 @@ function DrawerMenu() {
         <DrawerOverlay />
         <DrawerContent>
           <DrawerCloseButton />
-          <DrawerHeader>Fresh Organic Picks</DrawerHeader>
+          <DrawerHeader>A K Agri Exports</DrawerHeader>
 
           <DrawerBody>
             <Box p={4}>
@@ -51,12 +55,9 @@ function DrawerMenu() {
                 <Link to={"/"} onClick={handleLinkClick}>
                   HOME
                 </Link>
-                
               </HStack>
-              
-              
             </Box>
-            <AccordianItem handleLinkClick={handleLinkClick}/>
+            <AccordianItem handleLinkClick={handleLinkClick} />
 
             <Box p={4}>
               <HStack>
@@ -64,22 +65,9 @@ function DrawerMenu() {
                 <Link to={"/contact"} onClick={handleLinkClick}>
                   CONTACT
                 </Link>
-                
               </HStack>
-              
-              
             </Box>
-            
           </DrawerBody>
-
-            
-
-          <DrawerFooter>
-            <Button variant="outline" mr={3} onClick={onClose}>
-              Log In
-            </Button>
-            <Button colorScheme="blue">Sign Up</Button>
-          </DrawerFooter>
         </DrawerContent>
       </Drawer>
     </>
