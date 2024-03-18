@@ -5,7 +5,6 @@ import PagesLink from "./PagesLink";
 import "./Navbar.css";
 
 import logo from "../../assets/logo.png";
-import SearchBox from "./SearchBox";
 import DrawerMenu from "./DrawerMenu";
 import { useEffect, useState } from "react";
 
@@ -86,12 +85,9 @@ function Navbar() {
         <HStack
           className="drawer-icon"
           display={["block", "block", "block", "none"]}
-          width={"40%"}
         >
           <DrawerMenu />
         </HStack>
-
-        {/* Right Links */}
       </HStack>
     </Box>
   );

@@ -1,4 +1,3 @@
-
 import {
   Box,
   Accordion,
@@ -16,20 +15,11 @@ function AccordianItem({ handleLinkClick }) {
       <AccordionItem>
         <h2>
           <AccordionButton>
-            <Box  as="span" flex="1" textAlign="left">
-              SHOP
+            <Box as="span" flex="1" textAlign="left">
+              <Link to="/varieties">PRODUCTS</Link>
             </Box>
-            <AccordionIcon />
           </AccordionButton>
         </h2>
-        <AccordionPanel pb={4}>
-          <VStack alignItems={"flex-start"} paddingLeft={"10px"} gap={"20px"}>
-            <Link onClick={handleLinkClick} to={"./organic-fruits"}>Organic Fruits</Link>
-            <Link onClick={handleLinkClick} to={"./aggregate-fruits"}>Aggregate Fruits</Link>
-            <Link onClick={handleLinkClick} to={"./pits-fruits"}>Pits Fruits</Link>
-            <Link onClick={handleLinkClick} to={"./legumas-fruits"}>Legumas Fruits</Link>
-          </VStack>
-        </AccordionPanel>
       </AccordionItem>
 
       <AccordionItem>
@@ -42,11 +32,16 @@ function AccordianItem({ handleLinkClick }) {
           </AccordionButton>
         </h2>
         <AccordionPanel pb={4}>
-        <VStack alignItems={"flex-start"} paddingLeft={"10px"} gap={"20px"}>
-            <Link onClick={handleLinkClick} to={"./about"}>About</Link>
-            <Link onClick={handleLinkClick} to={"./services"}>Services</Link>
-            <Link onClick={handleLinkClick} to={"./faq"}>FAQ'S</Link>
-            <Link onClick={handleLinkClick} to={"./my-account"}>My Account</Link>
+          <VStack alignItems={"flex-start"} paddingLeft={"10px"} gap={"20px"}>
+            <Link onClick={handleLinkClick} to={"./about"}>
+              About
+            </Link>
+            <Link onClick={handleLinkClick} to={"./services"}>
+              Services
+            </Link>
+            <Link onClick={handleLinkClick} to={"./faq"}>
+              FAQ'S
+            </Link>
           </VStack>
         </AccordionPanel>
       </AccordionItem>

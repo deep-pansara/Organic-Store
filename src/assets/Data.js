@@ -1,55 +1,66 @@
 // import img from './'
 
 const itemCard = [
-    {
-      id: 1,
-      itemImage: './public/Fruits & Vegetables/Watermelon.png',
-      itemTitle: 'Organic Watermelon',
-      price: '198.00',
-    },
-    {
-      id: 2,
-      itemImage: './public/Fruits & Vegetables/Tomato.png',
-      itemTitle: 'Fresh Tomato',
-      price: '210.00',
-    },
-    {
-      id: 3,
-      itemImage: './public/Fruits & Vegetables/Mushrom.png',
-      itemTitle: 'Natural Mushroom',
-      price: '118.00',
-    },
-    {
-      id: 4,
-      itemImage: './public/Fruits & Vegetables/Brocilli.png',
-      itemTitle: 'Natural Broccoli',
-      price: '178.00',
-    },
-    {
-      id: 5,
-      itemImage: './public/Fruits & Vegetables/Corn.png',
-      itemTitle: 'Sweet Corn',
-      price: '218.00',
-    },
-    {
-      id: 6,
-      itemImage: './public/Fruits & Vegetables/Asparagus.png',
-      itemTitle: 'Organic Asparagus',
-      price: '118.00',
-    },
-    {
-      id: 7,
-      itemImage: './public/Fruits & Vegetables/Onion.png',
-      itemTitle: 'Organic Onion',
-      price: '248.00',
-    },
-    {
-      id: 8,
-      itemImage: './public/Fruits & Vegetables/Carrot.png',
-      itemTitle: 'Fresh Carrots',
-      price: '138.00',
-    },
-  ];
-  
-  export default itemCard;
-  
+  {
+    id: 1,
+    itemImage: "./public/potatoes/pukhraj.png",
+    itemTitle: "PUKHRAJ POTATOES ",
+    shape: "Large Ovel & Slightly Tapered",
+    size: "45MM TO 90MM",
+    skin: "Smooth",
+    eyes: "Fleet",
+    flesh: "Yellow",
+  },
+  {
+    id: 2,
+    itemImage: "./public/potatoes/laukar1.png",
+    itemTitle: "LAUVKAR POTATOES",
+    shape: "Large Round Oval",
+    size: "45MM TO 90MM",
+    skin: "Smooth",
+    eyes: "Fleet with Prominent Eye Brows",
+    flesh: "White",
+  },
+  {
+    id: 3,
+    itemImage: "./public/potatoes/badshah-potatoes.png",
+    itemTitle: "BADSHAH POTATOES ",
+    shape: "Large Oval",
+    size: "45MM TO 90MM",
+    skin: "Smooth & White Color",
+    eyes: "Fleet",
+    flesh: "White",
+  },
+  {
+    id: 4,
+    itemImage: "./public/potatoes/lady-rosetta-potato.webp",
+    itemTitle: "LADY ROSSETA POTATOES",
+    shape: "Round",
+    size: "45MM TO 90MM",
+    skin: "Flaky Red color",
+    eyes: "Shallow",
+    flesh: "Cream to Light Yellow",
+  },
+  {
+    id: 5,
+    itemImage: "./public/potatoes/chipsona.png",
+    itemTitle: "CHIPSONA POTATOES",
+    shape: "Medium Round Oval",
+    size: "45MM TO 90MM",
+    skin: "Smooth & White color",
+    eyes: "Fleet",
+    flesh: "Yellow",
+  },
+  {
+    id: 6,
+    itemImage: "./public/potatoes/santana-potatoes.png",
+    itemTitle: "SANTANA POTATOES",
+    shape: "OBLONG",
+    size: "45MM TO 90MM",
+    skin: "Smooth & White color",
+    eyes: "Fleet",
+    flesh: "Pale Yellow",
+  },
+];
+
+export default itemCard;

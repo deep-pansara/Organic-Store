@@ -13,8 +13,12 @@ function Section3() {
       <VStack width={"100%"} height={"100%"} flexWrap={"wrap"}>
         <VStack>
           <HStack>
-            <Text fontSize={['25px' , '40px']} fontWeight={"600"} letterSpacing={"2px"}>
-              Fruits & Vegetables
+            <Text
+              fontSize={["25px", "40px"]}
+              fontWeight={"600"}
+              letterSpacing={"2px"}
+            >
+              Our Potato Varieties
             </Text>
           </HStack>
 
@@ -24,10 +28,7 @@ function Section3() {
               margin={"auto"}
               textAlign={"center"}
               marginTop={"1rem"}
-            >
-              Dorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </Text>
+            ></Text>
           </HStack>
         </VStack>
 

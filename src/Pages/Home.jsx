@@ -17,7 +17,6 @@ function Home() {
       <Section3 />
       <TestimonialsSection />
       <WhyChooseUs />
-      <FreeDelivery />
     </>
   );
 }

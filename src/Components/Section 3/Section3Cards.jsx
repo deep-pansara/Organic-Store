@@ -8,6 +8,17 @@ import {
   HStack,
   position,
 } from "@chakra-ui/react";
+import {
+  Table,
+  Thead,
+  Tbody,
+  Tfoot,
+  Tr,
+  Th,
+  Td,
+  TableCaption,
+  TableContainer,
+} from "@chakra-ui/react";
 import React, { useState } from "react";
 import { FaShoppingBag, FaHeart, FaShareAlt } from "react-icons/fa";
 import data from "../../assets/Data";
@@ -18,8 +29,8 @@ function Section3Cards() {
     data.map(() => ({ isClicked: false, isOverlayVisible: false }))
   );
 
-  const changeFavIcon = (index) => {
-    setCardStates((prevStates) => {
+  const changeFavIcon = index => {
+    setCardStates(prevStates => {
       const newStates = [...prevStates];
       newStates[index].isClicked = !newStates[index].isClicked;
       return newStates;
@@ -27,36 +38,31 @@ function Section3Cards() {
   };
 
   const changeOverlayVisible = (index, isVisible) => {
-    setCardStates((prevStates) => {
+    setCardStates(prevStates => {
       const newStates = [...prevStates];
       newStates[index].isOverlayVisible = isVisible;
       return newStates;
     });
   };
 
-  const addToCartHandler = (item) => {
+  const addToCartHandler = item => {
     // const quantity = 1;
     // console.log("Added to cart", item);
-  
-    toast.success("Added to cart", {
-      position: 'bottom-center', // Set the position to bottom-center
-    });
-  
-    
-  };
-  
-  
 
+    toast.success("Added to cart", {
+      position: "bottom-center", // Set the position to bottom-center
+    });
+  };
 
   return (
     <>
       <Grid
         templateColumns={{
           base: "repeat(1, 1fr)",
-          md: "repeat(3, 1fr)",
-          lg: "repeat(4, 1fr)",
+          md: "repeat(2, 1fr)",
+          lg: "repeat(3, 1fr)",
         }}
-        gap="1rem"
+        gap="2rem"
       >
         {data.map((item, index) => (
           <GridItem key={item.id} colSpan={1} rowSpan={1}>
@@ -64,7 +70,7 @@ function Section3Cards() {
               width={"100%"}
               height={"100%"}
               overflow={"hidden"}
-              marginTop={"2rem"}
+              marginTop={"1rem"}
               onMouseEnter={() => changeOverlayVisible(index, true)}
               onMouseLeave={() => changeOverlayVisible(index, false)}
             >
@@ -74,104 +80,88 @@ function Section3Cards() {
                 <HStack position={"relative"} overflow={"hidden"}>
                   <Image
                     borderRadius={"20px"}
-                    boxSize={"250px"}
+                    boxSize={"400px"}
                     src={item.itemImage}
                   />
 
                   {/* Card Overlay */}
                   <HStack
                     width={"100%"}
-                    height={"100px"}
+                    height={"50px"}
                     position={"absolute"}
                     bottom={0}
                     justifyContent={"center"}
+                    alignItems={"center"}
                     transition={"all 0.2s ease"}
                     {...(cardStates[index].isOverlayVisible
                       ? { transform: "translateY(0px)" }
-                      : { transform: "translateY(100px)" })}
+                      : { transform: "translateY(300px)" })}
                   >
-                    {/* Shopping Bag Icon */}
-                    <HStack
-                      width={"40px"}
-                      height={"40px"}
-                      backgroundColor={"#5DA88A"}
-                      borderRadius={"50%"}
-                      justifyContent={"center"}
-                      alignItems={"center"}
-                      color={"white"}
-                      cursor={"pointer"}
-                      transition={"all 0.2s linear"}
-                      _hover={{
-                        transform: "scale(1.1)",
-                      }}
-                      onClick={() => {
-                        addToCartHandler(item);
-                      }}
-                    >
-                      <FaShoppingBag />
-                    </HStack>
-
-                    {/* Favourite Icon */}
-                    <HStack
-                      width={"40px"}
-                      height={"40px"}
-                      backgroundColor={"#5DA88A"}
-                      borderRadius={"50%"}
-                      justifyContent={"center"}
-                      alignItems={"center"}
-                      color={"white"}
-                      cursor={"pointer"}
-                      transition={"all 0.2s linear"}
-                      _hover={{
-                        transform: "scale(1.1)",
-                      }}
-                      onClick={() => {
-                        changeFavIcon(index);
-                      }}
-                    >
-                      <FaHeart
-                        className={
-                          cardStates[index].isClicked
-                            ? "text-[#FEE4D7]"
-                            : "text-white"
-                        }
-                      />
-                    </HStack>
-
                     {/* Share Icon */}
                     <HStack
-                      width={"40px"}
-                      height={"40px"}
-                      backgroundColor={"#5DA88A"}
-                      borderRadius={"50%"}
+                      width={"100%"}
+                      height={"100%"}
+                      backgroundColor={"#a2e4ca3b"}
                       justifyContent={"center"}
                       alignItems={"center"}
+                      borderRadius={"0px 0px 20px 20px"}
+                      fontFamily={"sans-serif"}
                       color={"white"}
                       cursor={"pointer"}
                       transition={"all 0.2s linear"}
                       _hover={{
-                        transform: "scale(1.1)",
+                        transform: "scale(1)",
                       }}
                     >
-                      <FaShareAlt />
+                      <Text color={"black"} fontWeight={700}>
+                        {item.itemTitle}
+                      </Text>
                     </HStack>
                   </HStack>
                 </HStack>
 
-                <VStack alignItems={"flex-start"}>
+                <VStack alignItems={"center"}>
                   <HStack>
                     <Text
                       fontWeight={"600"}
                       letterSpacing={"2px"}
                       fontSize={"20px"}
                     >
-                      {" "}
                       {item.itemTitle}
                     </Text>
                   </HStack>
 
                   <HStack>
-                    <Text fontWeight={700}>Rs. {item.price} </Text>
+                    <TableContainer>
+                      <Table variant="simple">
+                        <Thead>
+                          <Tr>
+                            <Th>Shape :</Th>
+                            <Td>{item.shape}</Td>
+                          </Tr>
+                        </Thead>
+                        <Tbody>
+                          <Tr>
+                            <Th>Size :</Th>
+                            <Td>{item.size}</Td>
+                          </Tr>
+                          <Tr>
+                            <Th>Skin :</Th>
+                            <Td>{item.skin}</Td>
+                          </Tr>
+                          <Tr>
+                            <Th>Eyes:</Th>
+                            <Td>{item.eyes}</Td>
+                          </Tr>
+                        </Tbody>
+                        <Tfoot>
+                          <Tr>
+                            <Th>Flesh :</Th>
+                            <Td>{item.flesh}</Td>
+                          </Tr>
+                        </Tfoot>
+                      </Table>
+                    </TableContainer>
                   </HStack>
                 </VStack>
               </VStack>
@@ -179,7 +169,6 @@ function Section3Cards() {
           </GridItem>
         ))}
       </Grid>
-
     </>
   );
 }
